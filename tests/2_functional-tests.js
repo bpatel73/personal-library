@@ -183,9 +183,9 @@ suite('Functional Tests', function() {
           .keepOpen()
           .delete('/api/books/'+bookId)
           .end(function(err, res){
-            assert(res.status, 200)
-            assert(res.type, 'text/html')
-            assert(res.text, 'delete successful')
+            assert.equal(res.status, 200)
+            assert.equal(res.type, 'text/html')
+            assert.equal(res.text, 'delete successful')
             done()
           })
       });
@@ -196,9 +196,9 @@ suite('Functional Tests', function() {
           .keepOpen()
           .delete('/api/books/669a8068c88ef632bd183dae')
           .end(function(err, res){
-            assert(res.status, 200)
-            assert(res.type, 'text/html')
-            assert(res.text, 'no book exists')
+            assert.equal(res.status, 200)
+            assert.equal(res.type, 'text/html')
+            assert.equal(res.text, 'no book exists')
             done()
           })
       });
